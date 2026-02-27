@@ -15,14 +15,28 @@
   src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Light.ttf); /* url of the font */
 }
 
-.maintile  
+.main-title  
 {
     color: #00ccff;
     font-family: "JetbrainMonoNerdFont";
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
+   0 0 20px #00a2ff, 0 0 30px #00a2ff,0 0 40px #00a2ff,0 0 55px #00a2ff,0 0 75px #00a2ff;
+color: #FFFFFF;
+background: #131313;
 }
 
+.background
+{
+    background-color: #131313;
+}
 .body
 {
-    background-color: #ffffff;
+    background-color: #131313;
+    font-family: "JetbrainMonoNerdFont";
+}
+.header
+{
+    background-color: #131313;
+    color: #ffffff;
     font-family: "JetbrainMonoNerdFont";
 }
