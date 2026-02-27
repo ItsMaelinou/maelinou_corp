@@ -22,21 +22,21 @@
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
    0 0 20px #00a2ff, 0 0 30px #00a2ff,0 0 40px #00a2ff,0 0 55px #00a2ff,0 0 75px #00a2ff;
 color: #FFFFFF;
-background: #131313;
+background: #ffffff;
 }
 
 .background
 {
-    background-color: #131313;
+    background-color: #1f1f1f;
 }
 .body
 {
-    background-color: #131313;
+    background-color: #ffffff;
     font-family: "JetbrainMonoNerdFont";
 }
 .header
 {
-    background-color: #131313;
+    background-color: #ffffff;
     color: #ffffff;
     font-family: "JetbrainMonoNerdFont";
 }
