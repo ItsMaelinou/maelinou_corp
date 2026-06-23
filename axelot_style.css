@@ -1,42 +1,281 @@
 @font-face {
-  font-family: JetbrainMonoNerdFont; /* set name */
-  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNLNerdFontPropo-Regular.ttf); /* url of the font */
+  font-family: JetbrainMonoNerdFont;
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNLNerdFontPropo-Regular.ttf);
 }
 @font-face {
-  font-family: JetbrainMonoNerdFontBold; /* set name */
-  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Bold.ttf); /* url of the font */
+  font-family: JetbrainMonoNerdFontBold;
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Bold.ttf);
 }
 @font-face {
-  font-family: JetbrainMonoNerdFontSemiBold; /* set name */
-  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-SemiBold.ttf); /* url of the font */
+  font-family: JetbrainMonoNerdFontSemiBold;
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-SemiBold.ttf);
 }
 @font-face {
-  font-family: JetbrainMonoNerdFontLight; /* set name */
-  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Light.ttf); /* url of the font */
+  font-family: JetbrainMonoNerdFontLight;
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Light.ttf);
 }
 
-.main-title  
-{
-    color: #00ccff;
-    font-family: "JetbrainMonoNerdFont";
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
-   0 0 20px #00a2ff, 0 0 30px #00a2ff,0 0 40px #00a2ff,0 0 55px #00a2ff,0 0 75px #00a2ff;
-color: #FFFFFF;
-background: #ffffff;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.background
-{
-    background-color: #1f1f1f;
+html {
+  scroll-behavior: smooth;
 }
-.body
-{
-    background-color: #ffffff;
-    font-family: "JetbrainMonoNerdFont";
+
+body {
+  min-height: 100vh;
+  font-family: "JetbrainMonoNerdFont", monospace;
+  overflow-x: hidden;
 }
-.header
-{
-    background-color: #ffffff;
-    color: #ffffff;
-    font-family: "JetbrainMonoNerdFont";
+
+.background {
+  background: linear-gradient(135deg, #0a0a1a 0%, #0d1117 30%, #0a1628 60%, #0a0a1a 100%);
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+header {
+  text-align: center;
+  animation: fadeInDown 1s ease-out;
+}
+
+.glow-title {
+  font-family: "JetbrainMonoNerdFontBold", monospace;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: #ffffff;
+  text-shadow:
+    0 0 7px #00ccff,
+    0 0 10px #00ccff,
+    0 0 21px #00ccff,
+    0 0 42px #0088cc,
+    0 0 82px #0088cc,
+    0 0 92px #0088cc,
+    0 0 102px #0088cc,
+    0 0 151px #0088cc;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+  letter-spacing: 2px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.axolotl-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.axolotl-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(0,204,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+.AxolotlImage {
+  width: min(250px, 60vw);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 10px rgba(0, 204, 255, 0.4)) drop-shadow(0 0 30px rgba(0, 204, 255, 0.2));
+  animation: float 4s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.AxolotlImage:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 20px rgba(0, 204, 255, 0.6)) drop-shadow(0 0 50px rgba(0, 204, 255, 0.3));
+}
+
+.subtitle {
+  font-family: "JetbrainMonoNerdFontLight", monospace;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.content {
+  text-align: center;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.glow-text {
+  font-family: "JetbrainMonoNerdFontSemiBold", monospace;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #00ccff,
+    0 0 10px #00ccff,
+    0 0 20px #00ccff,
+    0 0 40px #0088cc;
+  animation: pulseGlow 2.5s ease-in-out infinite alternate;
+}
+
+.divider {
+  width: min(200px, 50vw);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ccff, transparent);
+  opacity: 0.5;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.bio {
+  font-family: "JetbrainMonoNerdFontLight", monospace;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.social-link {
+  font-family: "JetbrainMonoNerdFont", monospace;
+  color: #00ccff;
+  text-decoration: none;
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ccff;
+}
+
+.social-link.disabled {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+}
+
+.social-sep {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  text-align: center;
+  padding-top: 1rem;
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+footer p {
+  font-family: "JetbrainMonoNerdFontLight", monospace;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+  letter-spacing: 1px;
+}
+
+@keyframes pulseGlow {
+  from {
+    text-shadow:
+      0 0 7px #00ccff,
+      0 0 10px #00ccff,
+      0 0 21px #00ccff,
+      0 0 42px #0088cc,
+      0 0 82px #0088cc,
+      0 0 92px #0088cc;
+  }
+  to {
+    text-shadow:
+      0 0 7px #00ccff,
+      0 0 10px #00ccff,
+      0 0 21px #00ccff,
+      0 0 42px #0088cc,
+      0 0 82px #0088cc,
+      0 0 92px #0088cc,
+      0 0 102px #0088cc,
+      0 0 151px #00aaff;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleX(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+    gap: 1.5rem;
+  }
+  .social-links {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .social-sep {
+    display: none;
+  }
 }
